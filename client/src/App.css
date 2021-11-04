@@ -3,16 +3,6 @@
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-button{
-  width: 180px;
-}
+.my-h1{text-shadow: 0 0 1.4rem #0d6efd;}
 
-.my-card{
-  box-shadow: 0 0 1rem #0d6efd;
-}
-
-/* #updateInput{
-  width: 100px;
-  height: 20px;
-  margin-bottom: 20px;
-} */
+.my-card{box-shadow: 0 0 1rem #0d6efd;}
