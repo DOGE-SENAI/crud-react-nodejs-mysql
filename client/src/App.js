@@ -17,10 +17,10 @@ function App() {
 
   const submitReview = () => {
     Axios.post('http://localhost:3001/api/insert', {
-      movieName: movieName, 
+      movieName: movieName,
       movieReview: review,
     });
-    
+
     setMovieList([
       ...movieReviewList,
       {
@@ -44,63 +44,112 @@ function App() {
     });
     setNewReview("");
 
-    
+
   };
 
   return (
-    <div className="App">
-      <h1>CRUD APPLICATION</h1>
+		<div className="App" style={{backgroundColor: "#151515"}}>
+			<h1 className="m-4 text-light display-1">CRUD APPLICATION</h1>
 
-      <div className="form">
-        <label>Movie Name:</label>
-        <input 
-          type="text"
-          name="movieName"
-          onChange={(e) => {
-            setMovieName(e.target.value);
-          }}
-          id="inputMovieName"
-        />
+			<div className="form m-4 d-flex justify-content-around flex-column align-items-center">
+				<div className="m-4 container col-md-6">
+        <div className="input-group input-group-lg mb-3">
+					<span className="input-group-text border-success bg-success text-light" id="inputGroup-sizing-default">
+						Filme
+					</span>
+					<input
+						name="movieName"
+						onChange={(e) => {
+							setMovieName(e.target.value);
+						}}
+						id="inputMovieName"
+						type="text"
+						className="form-control"
+						aria-label="Sizing example input"
+						aria-describedby="inputGroup-sizing-default"
+					/>
+				</div>
 
-        <label>Review:</label>
-        <input
-          type="text"
-          name="review"
-          onChange={(e) => {
-            setReview(e.target.value);
-          }}
-          id="inputMovieReview"
-        />
+				<div className="input-group input-group-lg mb-3">
+					<span className="input-group-text border-primary bg-primary text-light" id="inputGroup-sizing-default">
+						Avaliação
+					</span>
+					<input
+						type="text"
+						name="review"
+						onChange={(e) => {
+							setReview(e.target.value);
+						}}
+						id="inputMovieReview"
+						className="form-control"
+						aria-label="Sizing example input"
+						aria-describedby="inputGroup-sizing-default"
+					/>
+				</div>
 
-        <button onClick={submitReview}>Submit</button>
+				<button
+					onClick={submitReview}
+					type="button"
+					className="btn btn-success btn-lg"
+				>
+					Adicionar Filme
+				</button>
+        </div>
 
-        {movieReviewList.map((val) => {
-          return (
-            <div className="card">
-              <h1>{val.movieName}</h1>
-              <p>{val.movieReview}</p>
+				{movieReviewList.map((val) => {
+					return (
+						<div className="card text-center w-95 m-4 border-primary my-card">
+							<div className="card-header border-bottom border-primary bg-dark">
+								<h1 className="text-light">{val.movieName}</h1>
+							</div>
 
-              <button onClick={() => {deleteReview(val.movieName)}}>Delete</button>
-              <input
-                type="text"
-                id="updateInput"
-                onChange={(e) => {
-                  setNewReview(e.target.value)
-                }}
-              />
-              <button
-                onClick={() => {
-                  updateReview(val.movieName)
-                }}
-              >
-                Update
-              </button>
-            </div>
-          );
-        })}
-      </div>
-    </div>
-  );
+							<div className="card-body" style={{backgroundColor: "#2E3030"}}>
+								<h6 className="card-title mb-3 fw-normal fst-italic text-light">{val.movieReview}</h6>
+
+								<div className="input-group mb-3">
+									<span
+										className="input-group-text border-primary fw-normal bg-primary"
+										id="inputGroup-sizing-default"
+									>
+										Avaliação
+									</span>
+									<input
+										onChange={(e) => {
+											setNewReview(e.target.value);
+										}}
+										type="text"
+										className="form-control border-primary"
+										aria-label="Sizing example input"
+										aria-describedby="inputGroup-sizing-default"
+									/>
+								</div>
+
+								<button
+									type="button"
+									className="btn btn-primary"
+									onClick={() => {
+										updateReview(val.movieName);
+									}}
+								>
+									Atualizar
+								</button>
+
+								<button
+									onClick={() => {
+										deleteReview(val.movieName);
+									}}
+									type="button"
+									className="btn btn-outline-danger m-3 fw-bolder"
+								>
+									Deletar
+								</button>
+							</div>
+						</div>
+					);
+				})}
+			</div>
+		</div>
+	);
 }
 
 export default App;
