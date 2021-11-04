@@ -129,6 +129,7 @@ function App() {
 									className="btn btn-primary"
 									onClick={() => {
 										updateReview(val.movieName);
+                    document.location.reload(true);
 									}}
 								>
 									Atualizar
@@ -137,6 +138,7 @@ function App() {
 								<button
 									onClick={() => {
 										deleteReview(val.movieName);
+                    document.location.reload(true);
 									}}
 									type="button"
 									className="btn btn-outline-danger m-3 fw-bolder"
