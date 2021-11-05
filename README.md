@@ -13,7 +13,7 @@ Adicione filmes e as suas opiniões sobre os mesmos. Esta simples aplicação fo
 
 <img src="client/public/assets/imgReadme/apresentacao.png" />
 
-<div id=#tecnologias>
+<div id=tecnologias>
 </div>
 
 ### 🛠 Tecnologias e Ferramentas utilizadas
@@ -26,13 +26,13 @@ Adicione filmes e as suas opiniões sobre os mesmos. Esta simples aplicação fo
 - [Axios](https://axios-http.com/docs/intro)
 - [Bootstrap](https://getbootstrap.com/)
 
-<div id=#requisitos></div>
+<div id=requisitos></div>
 
 ### :heavy_exclamation_mark: Pré-requisitos
 
 Para rodar a aplicação em sua máquina, você precisa ter instalado o [Node.Js](https://nodejs.org/en/), [MySQL](https://www.mysql.com/) e um Editor de código de sua preferência. O arquivo para colocar as informações necessárias para a conexão com o seu banco de dados é ```server/index.js```, linha 7 à 12.
 
-<div id=#rodando></div>
+<div id=rodando></div>
 
 ### :rocket: Rodando a Aplicação
 
@@ -67,7 +67,7 @@ $ npm start
 # Não esqueça de iniciar o seu Banco de Dados.
 ```
 
-<div id="#contribuicao"></div>
+<div id="contribuicao"></div>
 
 ### 👥 Contributors
 
